@@ -1,0 +1,6 @@
+OrderID,ReasonCode,Amount,Currency,ProcessorName,DeliveryDate,OrderDate,MerchantName,Address
+2,4526,200,EUR,AMEX,22/11/2022,15/11/2022,MyShop,Rothschild 1 Tel Aviv
+3,4526,600,AUD,AMEX,25/11/2022,20/11/2022,MyShop,Rothschild 1 Tel Aviv
+2,13.1,2,EUR,AMEX,21/11/2022,17/11/2022,MyShop,Rothschild 1 Tel Aviv
+5,10.3,10000,USD,VISA,2022-11-26,2022-11-22,MyShop,Rothschild 1 Tel Aviv
+6,13.1,30000,AUD,VISA,2022-11-27,2022-11-23,MyShop,Rothschild 1 Tel Aviv

@@ -1,0 +1,16 @@
+[
+  {
+    "OrderID": 2,
+    "ReasonCode": 13.1,
+    "Amount": 2,
+    "Currency": "EUR",
+    "ProcessorName": "AMEX",
+    "DeliveryDate": "2022-11-21",
+    "OrderDate": "2022-11-17",
+    "MerchantName": "MyShop",
+    "Address": "Rothschild 1 Tel Aviv",
+    "ReasonCategory": "FRAUD",
+    "AmountUSD": 1,
+    "ProcessingDate": "2022-11-20"
+  }
+]

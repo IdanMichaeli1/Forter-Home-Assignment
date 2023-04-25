@@ -40,7 +40,7 @@ class CsvToJson():
                     else:
                         self.duplicated_objects.append(obj)
             
-        except (FileNotFoundError, StopIteration) as e:
+        except (FileNotFoundError, StopIteration, KeyError) as e:
             print("The file path you provided was invalid, try again.")
             file_path = input("Please enter a file path for conversion: \n")
             CsvToJson(file_path, self.reason_codes)

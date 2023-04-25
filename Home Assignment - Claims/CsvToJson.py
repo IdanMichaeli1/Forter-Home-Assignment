@@ -1,5 +1,4 @@
 import csv
-import re
 import pandas as pd
 import json
 import os
@@ -7,9 +6,9 @@ import datetime
 
 class CsvToJson():
     
-    def __init__(self, file_path, reason_code) -> None:
+    def __init__(self, file_path, reason_codes) -> None:
         
-        self.reason_codes = reason_code
+        self.reason_codes = reason_codes
         self.objects = []
         self.duplicated_objects = []
         self.object_IDs = []
@@ -40,8 +39,8 @@ class CsvToJson():
                         self.object_IDs.append(obj["OrderID"])
                     else:
                         self.duplicated_objects.append(obj)
-        
-        except:
+            
+        except (FileNotFoundError, StopIteration) as e:
             print("The file path you provided was invalid, try again.")
             file_path = input("Please enter a file path for conversion: \n")
             CsvToJson(file_path, self.reason_codes)
@@ -97,14 +96,16 @@ class CsvToJson():
         """
         if processor == "AMEX":
             try:
-                date_obj = datetime.strptime(date, "%d-%m-%Y")
+                date_obj = datetime.datetime.strptime(date, "%d-%m-%Y").date()
             except ValueError:
-                date_obj = datetime.strptime(date, "%d/%m/%Y")
+                date_obj = datetime.datetime.strptime(date, "%d/%m/%Y").date()
+            return date_obj.strftime("%Y-%m-%d")
 
         elif merchant_name == "MyFlight":
-            date_obj = datetime.strptime(date, "%Y/%m/%d")
-
-        return date_obj.strftime("%Y-%m-%d")
+            date_obj = datetime.datetime.strptime(date, "%Y/%m/%d").date()
+            return date_obj.strftime("%Y-%m-%d")
+        
+        return date
         
     def reason_category(self, reason_code, proccessor) -> str:
         """gets the Reason Categoy of an object based on its Reason Code and Processor name

@@ -49,13 +49,21 @@ class CsvToJson():
                     else:
                         self.duplicated_objects.append(obj)
 
-        except (FileNotFoundError, StopIteration, KeyError) as e:
+        except (FileNotFoundError, StopIteration, KeyError):
             print("The file path you provided was invalid, try again.")
             file_path = input("Please enter a file path for conversion: \n")
             CsvToJson(file_path, self.reason_codes)
             return
 
         # Write to json files
+        self.write_to_json(file_path)
+
+    def write_to_json(self, file_path):
+        """Writes the csv data to a json file and to a duplicates json file if there are duplicated IDs
+
+        Args:
+            file_path (str): the path of this csv file
+        """
         input_file = os.path.basename(file_path)
         output_file = input_file.replace("csv", "json")
         duplicates_output_file = input_file.replace(".csv", "_duplicates.json")
@@ -83,12 +91,7 @@ class CsvToJson():
         """
         output_amount = int(amount)
         if processor == "VISA":
-
-            if merchant_name == "MyShop":
-                output_amount = output_amount / 1000
-
-            else:
-                output_amount = output_amount / 100
+            output_amount /= 1000 if merchant_name == "MyShop" else 100
 
         return int(output_amount) if int(output_amount) == output_amount else output_amount
 

@@ -28,20 +28,13 @@ class CsvToJson():
                         obj[col] = row[j]
 
                     obj["OrderID"] = int(obj["OrderID"])
-                    obj["ReasonCode"] = float(
-                        obj["ReasonCode"]) if '.' in obj["ReasonCode"] else int(obj["ReasonCode"])
-                    obj["Amount"] = self.format_amount(
-                        obj["Amount"], obj["MerchantName"], obj["ProcessorName"])
-                    obj["DeliveryDate"] = self.date_convertor(
-                        obj["MerchantName"], obj["ProcessorName"], obj["DeliveryDate"])
-                    obj["OrderDate"] = self.date_convertor(
-                        obj["MerchantName"], obj["ProcessorName"], obj["OrderDate"])
-                    obj["ReasonCategory"] = self.reason_category(
-                        obj["ReasonCode"], obj["ProcessorName"])
-                    obj["AmountUSD"] = self.usd_convertor(
-                        obj["Currency"], obj["Amount"])
-                    obj["ProcessingDate"] = self.processing_date(
-                        obj["OrderDate"], self.days_to_process)
+                    obj["ReasonCode"] = float(obj["ReasonCode"]) if '.' in obj["ReasonCode"] else int(obj["ReasonCode"])
+                    obj["Amount"] = self.format_amount(obj["Amount"], obj["MerchantName"], obj["ProcessorName"])
+                    obj["DeliveryDate"] = self.date_convertor(obj["MerchantName"], obj["ProcessorName"], obj["DeliveryDate"])
+                    obj["OrderDate"] = self.date_convertor(obj["MerchantName"], obj["ProcessorName"], obj["OrderDate"])
+                    obj["ReasonCategory"] = self.reason_category(obj["ReasonCode"], obj["ProcessorName"])
+                    obj["AmountUSD"] = self.usd_convertor(obj["Currency"], obj["Amount"])
+                    obj["ProcessingDate"] = self.processing_date(obj["OrderDate"], self.days_to_process)
 
                     if obj["OrderID"] not in self.object_IDs:
                         self.objects.append(obj)

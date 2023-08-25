@@ -125,8 +125,7 @@ class CsvToJson():
 
         proccessor = "AMERICAN_EXPRESS" if proccessor == "AMEX" else proccessor
         matching_rows = self.reason_codes[self.reason_codes["Processor"] == proccessor]
-        specific_row = matching_rows[matching_rows["ReasonCode"]
-                                     == reason_code]
+        specific_row = matching_rows[matching_rows["ReasonCode"] == reason_code]
 
         return str(specific_row["Reasoncategory"]).split()[1]
 

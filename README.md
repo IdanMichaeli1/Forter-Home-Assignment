@@ -13,7 +13,7 @@ To use the conversion system, follow these steps:
 
    ```bash
    git clone https://github.com/IdanMichaeli1/Forter-Home-Assignment.git
-   cd Forter-Home-Assignment
+   cd Forter-Home-Assignment/Home Assignment - Claims
    ```
 Install the required dependencies. You need Python and the Pandas library:
    ```bash

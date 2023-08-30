@@ -12,7 +12,7 @@ To use the conversion system, follow these steps:
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/IdanMichaeli1/Forter-Home-Assignment.git
    cd Forter-Home-Assignment
    ```
 Install the required dependencies. You need Python and the Pandas library:

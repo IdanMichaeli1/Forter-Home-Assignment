@@ -1,8 +1,46 @@
-# Forter-Home-Assignment
+# CSV to JSON Conversion System
 
-This is an home assignment I did when I interviewed to "Forter".<br />
-The Full instructions to the assignment is in the PDF named "Home assignment - Claims",<br />
-TL;DR the task was to read data from a csv file and write to json files after doing the requested manipulation on the data.<br />
-To run and test the code, use this command:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;python CsvToJson.py <br />
-After that a request for a path will be printed and you should input `Example/Inputs/file1.csv` (that's the relative path to the csv file).
+This project implements a basic conversion system that converts CSV formatted files containing rejected orders into JSON format. The system also enriches each order with calculated fields and handles duplicate orders.
+<br>
+<br>
+** The full instructions for the assignment are in a pdf named "Home assignment - Claims" **
+
+## Instructions
+
+To use the conversion system, follow these steps:
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone <repository_url>
+   cd Forter-Home-Assignment
+   ```
+Install the required dependencies. You need Python and the Pandas library:
+   ```bash
+   pip install pandas
+   ```
+
+Run the conversion script:
+   ```bash
+   python CsvToJson.py
+   ```
+
+The script will prompt you to enter the path of the CSV file containing orders.
+   ```bash
+   Example/Inputs/file1.csv
+   ```
+
+The converted JSON files will be saved in the Outputs directory:
+
+&nbsp;&nbsp;&nbsp;&nbsp; {file_name}.json: Converted orders with calculated fields.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; {file_name}_duplicates.json: Duplicate orders that were filtered out.
+
+## Notes
+The conversion system supports three merchants (MyShop, MyBook, MyFlight) and two processors (VISA, AMEX).
+ReasonCategory, AmountUSD, and ProcessingDate are calculated fields added to each order during conversion.
+The mapping for ReasonCategory is provided in the "reason codes.csv" file.
+Conversion of amount to USD takes exchange rates into account.
+## Limitations
+This project assumes a specific scope of merchants and processors as described in the instructions.
+Error handling for file paths and invalid data is minimal in this basic implementation.
+Feel free to reach out if you have any questions or need assistance!

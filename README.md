@@ -3,7 +3,7 @@
 This project implements a basic conversion system that converts CSV formatted files containing rejected orders into JSON format. The system also enriches each order with calculated fields and handles duplicate orders.
 <br>
 <br>
-** The full instructions for the assignment are in a pdf named "Home assignment - Claims" **
+**The full instructions for the assignment are in a pdf named "Home assignment - Claims"**
 
 ## Instructions
 
@@ -22,12 +22,12 @@ Install the required dependencies. You need Python and the Pandas library:
 
 Run the conversion script:
    ```bash
-   python CsvToJson.py
+   python Example/Csv2Json.py
    ```
 
 The script will prompt you to enter the path of the CSV file containing orders.
    ```bash
-   Example/Inputs/file1.csv
+   Inputs/file1.csv
    ```
 
 The converted JSON files will be saved in the Outputs directory:

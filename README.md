@@ -15,9 +15,9 @@ To use the conversion system, follow these steps:
    git clone https://github.com/IdanMichaeli1/Forter-Home-Assignment.git
    cd Forter-Home-Assignment/Home Assignment - Claims
    ```
-Install the required dependencies. You need Python and the Pandas library:
+Install the required dependencies. You need Python and to run this:
    ```bash
-   pip install pandas
+   pip install -r requirements.txt
    ```
 
 Run the conversion script:
@@ -27,7 +27,7 @@ Run the conversion script:
 
 The script will prompt you to enter the path of the CSV file containing orders.
    ```bash
-   Inputs/file1.csv
+   Inputs/MyShop/file1.csv
    ```
 
 The converted JSON files will be saved in the Outputs directory:

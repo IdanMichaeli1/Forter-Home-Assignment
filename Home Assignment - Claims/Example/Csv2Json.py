@@ -164,7 +164,7 @@ def format_dates(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def get_ouputs_filenames(input_path: str) -> Tuple[str]:
+def get_outputs_filenames(input_path: str) -> Tuple[str]:
     """
     Gets the names of the output file and the duplicates output dile.
 
@@ -230,7 +230,7 @@ def main(file_path: str) -> None:
     df_unique = df.drop_duplicates(subset=ORDER_ID)
     df_duplicates = df[df.duplicated(subset=ORDER_ID)]
 
-    unique_output_file_name, duplicates_output_file_name = get_ouputs_filenames(file_path)
+    unique_output_file_name, duplicates_output_file_name = get_outputs_filenames(file_path)
     merchant_name = file_path.split('/')[-2]
     
     # Save data
